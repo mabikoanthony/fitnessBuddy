@@ -1,0 +1,401 @@
+/* ==================
+Custom Property
+===================== */
+
+:root {
+  --jet: #333333;
+  --white: #ffffff;
+  --black: #000000;
+  --primary-1: #3d3d3d;
+  --primary-2: #404040;
+  --gray-1: #7a7a7a;
+  --gray-2: #cccccc;
+  --gray-3: #a1a1a1;
+  --gray-4: #707070;
+  --gray-5: #545454;
+  --gray-6: #262626;
+  --dark-1: #121212;
+  --dark-2: #050505;
+  --secondary-1: #e24650;
+  --secondary-2: #fac400;
+  --secondary-3: #6f5701;
+  --ff-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --transition: 0.15s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: var(--ff-font);
+  background: var(--dark-2);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 12.5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 12px #7fad39;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: goldenrod;
+  border-radius: 5px;
+  height: 20px;
+}
+
+/* Utility */
+
+.btn {
+  background-color: var(--secondary-2);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.75em 1.75rem;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.btn-outline {
+  border: 1px solid var(--white);
+
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.75em 1.75rem;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--dark-2);
+  border: 1px solid var(--white);
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary-2);
+  color: var(--white);
+  border: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Nav */
+
+.bars {
+  display: block;
+  font-size: 3rem;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.times {
+  color: #fff;
+  font-size: 3rem;
+  display: flex;
+  justify-content: end;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  transition: var(--transition);
+}
+
+.navbar {
+  width: 20rem;
+  background: var(--gray-1);
+  color: var(--white);
+  height: 100vh;
+  transition: var(--transition);
+  position: absolute;
+}
+
+.show {
+  transform: translateX(0);
+}
+
+.hide {
+  transform: translateX(-100%);
+}
+
+.nav-ul li {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  list-style: none;
+}
+
+.nav-ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.nav-ul li a:hover {
+  color: var(--secondary-1);
+  margin-left: 0.5rem;
+}
+
+.times:hover {
+  color: var(--secondary-1);
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .bars {
+    display: none;
+  }
+
+  .navbar {
+    color: var(--white);
+    background-color: #050505;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--gray-1);
+    overflow: auto;
+    transform: translateX(0);
+  }
+
+  .nav-ul {
+    display: flex;
+  }
+
+  .nav-ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    margin-right: 1rem;
+  }
+
+  .nav-ul li a:hover {
+    border-bottom: 2px solid var(--secondary-1);
+    margin-left: 0;
+    color: var(--white);
+  }
+
+  .times {
+    display: none;
+  }
+}
+
+.hero {
+  padding-top: 8rem;
+}
+
+.hero .img {
+  padding: 2.5rem;
+  border-radius: 50%;
+}
+
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.hero .content h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.hero .content p {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+}
+
+.hero .content .primary {
+  color: var(--secondary-2);
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+  }
+
+  .hero img {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 1rem solid var(--gray-1);
+  }
+
+  .hero .content h1 {
+    font-size: 40px;
+  }
+
+  .hero .btn-div {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .btn {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--white);
+    padding: 0.5rem 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .hero .content {
+    padding: 0 2rem;
+  }
+}
+
+/* Register Page */
+.register-container {
+  background: var(--gray-1);
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 1.6rem 2.4rem;
+  border-radius: 5px;
+}
+
+.register-container h1 {
+  font-size: 25px;
+}
+
+.register-header {
+  margin: 0.75rem 0;
+  text-align: center;
+}
+
+.register-container p {
+  text-align: center;
+}
+
+.form-control {
+  margin: 8px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-control input {
+  outline: navajowhite;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 0.5px solid #ddd;
+  font-family: inherit;
+}
+
+.form-footer {
+  text-align: center;
+}
+
+.form-footer p a {
+  color: var(--secondary-2);
+  text-decoration: none;
+}
+
+.footer-form p a:hover {
+  color: var(--secondary-1);
+}
+
+.login {
+  margin-top: 180px;
+}
+
+/* footer */
+footer {
+  background: var(--jet);
+}
+
+.top-footer > div {
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+}
+.bottom-footer {
+  background: var(--dark-1);
+  color: var(--white);
+  margin: 1rem;
+  padding: 1.2rem;
+  font-size: 1rem;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.footer-resourses > div {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.footer-resourses img {
+  width: 30px;
+  margin-right: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-links li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  color: var(--secondary-1);
+}
+
+.footer-form input {
+  padding: 10px;
+  font-family: inherit;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+input[type="submit"]:hover {
+  background: var(--secondary-1);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  /* footer */
+  .top-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+  }
+}
